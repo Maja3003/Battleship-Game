@@ -1,0 +1,307 @@
+﻿@{
+    ViewData["Title"] = "Battleship";
+}
+
+<style>
+
+    .battleship-table {
+        border-collapse: collapse;
+        margin: auto;
+    }
+
+        .battleship-table th, .battleship-table td {
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            border: 1px solid gray;
+        }
+
+        .battleship-table th {
+            background-color: lightblue;
+        }
+
+    .battleship-container {
+        display: flex;
+        justify-content: center;
+    }
+
+        .battleship-container > div {
+            margin: 50px;
+            position: relative;
+        }
+
+    .transparent {
+        opacity: 0.5;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .title {
+        margin-top: -40px;
+        font-family: 'Special Elite', cursive; /* Setting the font to Special Elite */
+        font-size: 50px; /* Adjusting the font size */
+        text-align: center; /* Center aligning the text */
+        position: relative;
+        color: blue;
+    }
+
+    .waiting-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        color: red;
+        pointer-events: none;
+    }
+
+    .ship-outline {
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+    }
+
+    .descrip {
+        font-family: 'Segoe Script', Segoe Script, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ustawienie rodziny czcionek z efektem kursywy */
+        color: blue; /* Ustawienie koloru tekstu */
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .ready-button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .randomize-text {
+        text-align: center;
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-top: 10px;
+    }
+
+    .surrounding {
+        opacity: 0.3;
+    }
+</style>
+
+
+<div class="title">
+    <img src="https://static.thenounproject.com/png/9270-200.png" ; />
+</div>
+
+
+<div class="title">
+    <h1 class="display-4 title">Battleship Online</h1>
+</div>
+
+<div class="battleship-container">
+    <div>
+        <div class="descrip">My ships</div>
+        <table class="battleship-table" id="player1-board">
+            <thead>
+                <tr>
+                    <th></th>
+                    @for (char c = 'A'; c <= 'J'; c++)
+                    {
+                        <th>@c</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <tr>
+                        <th>@i</th>
+                        @for (int j = 1; j <= 10; j++)
+                        {
+                            <td id="player1-@(i)-@(j)"></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="randomize-text" id="randomize-player1">Randomize</div>
+        <button class="ready-button hidden" id="ready-button-player1">Ready</button>
+    </div>
+
+    <div class="transparent" id="player2-container">
+        <div class="descrip">Enemy ships</div>
+        <div class="waiting-text" id="waiting-text">Waiting for opponent to join...</div>
+        <table class="battleship-table" id="player2-board">
+            <thead>
+                <tr>
+                    <th></th>
+                    @for (char c = 'A'; c <= 'J'; c++)
+                    {
+                        <th>@c</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <tr>
+                        <th>@i</th>
+                        @for (int j = 1; j <= 10; j++)
+                        {
+                            <td id="player2-@(i)-@(j)"></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button class="ready-button hidden" id="ready-button-player2">Ready</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const connection = new signalR.HubConnectionBuilder().withUrl("/gameHub").build();
+
+        connection.on("WaitingForOpponent", function () {
+            document.getElementById('waiting-text').classList.remove('hidden');
+        });
+
+        connection.on("StartGame", function () {
+            document.getElementById('player2-container').classList.remove('transparent');
+            document.getElementById('waiting-text').classList.add('hidden');
+            document.getElementById('ready-button-player1').classList.remove('hidden');
+            document.getElementById('ready-button-player2').classList.remove('hidden');
+            randomlyPlaceShipsForPlayer2(); // Randomly place ships for player 2
+        });
+
+        connection.on("GameFull", function () {
+            alert("Game is full. Please try again later.");
+        });
+
+        connection.start().then(function () {
+            console.log("SignalR connected");
+            connection.invoke("JoinGame");
+            randomlyPlaceShipsForPlayer1(); // Randomly place ships for player 1 upon connection
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        // Function to randomly place ships for player 2
+        function randomlyPlaceShipsForPlayer2() {
+            const shipSizes = [6, 4, 4, 3, 3, 3, 2, 2, 2, 2]; // Sizes of the ships
+            placeShips('player2', shipSizes);
+        }
+
+        // Function to randomly place ships for player 1
+        function randomlyPlaceShipsForPlayer1() {
+            const shipSizes = [6, 4, 4, 3, 3, 3, 2, 2, 2, 2]; // Sizes of the ships
+            clearBoard('player1');
+            placeShips('player1', shipSizes);
+        }
+
+        function placeShips(player, shipSizes) {
+            const boardSize = 10; // Assuming a 10x10 board
+
+            shipSizes.forEach(size => {
+                let placed = false;
+                while (!placed) {
+                    const orientation = Math.random() < 0.5 ? "horizontal" : "vertical";
+                    let x, y;
+
+                    if (orientation === "horizontal") {
+                        x = Math.floor(Math.random() * (boardSize - size + 1)) + 1;
+                        y = Math.floor(Math.random() * boardSize) + 1;
+                    } else {
+                        x = Math.floor(Math.random() * boardSize) + 1;
+                        y = Math.floor(Math.random() * (boardSize - size + 1)) + 1;
+                    }
+
+                    if (canPlaceShip(player, x, y, size, orientation)) {
+                        for (let i = 0; i < size; i++) {
+                            if (orientation === "horizontal") {
+                                document.getElementById(`${player}-${y}-${x + i}`).classList.add('ship-outline');
+                            } else {
+                                document.getElementById(`${player}-${y + i}-${x}`).classList.add('ship-outline');
+                            }
+                        }
+                        markSurroundingCells(player, x, y, size, orientation);
+                        placed = true;
+                        connection.invoke("PlaceShip", player, x, y, size, orientation).catch(function (err) {
+                            return console.error(err.toString());
+                        });
+                    }
+                }
+            });
+        }
+
+        // Function to mark the surrounding cells around the placed ship
+        function markSurroundingCells(player, x, y, size, orientation) {
+            const boardSize = 10;
+
+            for (let i = -1; i <= size; i++) {
+                for (let j = -1; j <= 1; j++) {
+                    let cell;
+                    if (orientation === "horizontal") {
+                        cell = document.getElementById(`${player}-${y + j}-${x + i}`);
+                    } else {
+                        cell = document.getElementById(`${player}-${y + i}-${x + j}`);
+                    }
+
+                    if (cell && !cell.classList.contains('ship-outline')) {
+                        cell.classList.add('surrounding');
+                    }
+                }
+            }
+        }
+
+        // Function to check if the ship can be placed at the given coordinates
+        function canPlaceShip(player, x, y, size, orientation) {
+            const boardSize = 10;
+
+            for (let i = 0; i < size; i++) {
+                let cell;
+                if (orientation === "horizontal") {
+                    if (x + i > boardSize) return false;
+                    cell = document.getElementById(`${player}-${y}-${x + i}`);
+                } else {
+                    if (y + i > boardSize) return false;
+                    cell = document.getElementById(`${player}-${y + i}-${x}`);
+                }
+                if (cell.classList.contains('ship-outline') || cell.classList.contains('surrounding')) return false;
+            }
+            return true;
+        }
+
+        // Function to clear the board
+        function clearBoard(player) {
+            const cells = document.querySelectorAll(`#${player}-board td`);
+            cells.forEach(cell => {
+                cell.classList.remove('ship-outline', 'surrounding');
+            });
+        }
+
+        document.getElementById('randomize-player1').addEventListener('click', function () {
+            randomlyPlaceShipsForPlayer1();
+        });
+
+        document.getElementById('ready-button-player1').addEventListener('click', function () {
+            connection.invoke('PlayerReady', 'player1');
+            this.classList.add('hidden');
+        });
+
+        document.getElementById('ready-button-player2').addEventListener('click', function () {
+            connection.invoke('PlayerReady', 'player2');
+            this.classList.add('hidden');
+        });
+    });
+</script>

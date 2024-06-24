@@ -1,0 +1,163 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Programy\\Majajajjaja\\Battleships\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\tests\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:tests\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\battleships.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:battleships.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\hubs\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:hubs\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|d:\\programy\\majajajjaja\\battleships\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C387DEB9-0173-4F0F-9153-98FAF53E4B66}|Battleships.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwBgAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:14:20.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAEkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T12:20:50.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameHub.cs",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Hubs\\GameHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\GameHub.cs",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Hubs\\GameHub.cs",
+              "RelativeToolTip": "Hubs\\GameHub.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:17:46.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAIwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:12:34.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Test.cs",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Tests\\Test.cs",
+              "RelativeDocumentMoniker": "Tests\\Test.cs",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Tests\\Test.cs",
+              "RelativeToolTip": "Tests\\Test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:39:31.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Battleships.csproj",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Battleships.csproj",
+              "RelativeDocumentMoniker": "Battleships.csproj",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Battleships.csproj",
+              "RelativeToolTip": "Battleships.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-22T13:11:42.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T12:20:57.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Programy\\Majajajjaja\\Battleships\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Programy\\Majajajjaja\\Battleships\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T12:17:36.5Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
